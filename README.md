@@ -5,14 +5,39 @@ Permite registrar, consultar, editar, eliminar y buscar productos. Conserva los 
 
 ## Ejecutar
 
-Requiere **Python 3.10 o posterior**.
+Requiere **Git y Python 3.10 o posterior instalados** en la computadora donde se probará el proyecto.
+
+### 1. Descargar el proyecto y entrar en su carpeta
+
+Abrir Terminal en Mac o Linux, o PowerShell en Windows, y ejecutar estos comandos uno por uno:
+
+```sh
+git clone https://github.com/Angel-Urena-20251024/catalogo-productos-gitflow.git
+cd catalogo-productos-gitflow
+```
+
+### 2. Iniciar el programa
+
+**En Windows:**
+
+```sh
+py app.py
+```
+
+**En Mac o Linux:**
 
 ```sh
 python3 app.py
 ```
 
-Abrir http://127.0.0.1:8000. La base `catalogo.db` se crea al iniciar y queda excluida del control de versiones.
-En Windows puede utilizarse `py app.py`. Para otro puerto, definir la variable `PORT`.
+### 3. Abrir la aplicación en el navegador
+
+Cuando la terminal muestre `Catálogo disponible en http://127.0.0.1:8000`, abrir esa dirección en el navegador de la misma computadora.
+Mantener la terminal abierta mientras se utiliza la aplicación. Para detener el servidor, presionar **Control + C** en la terminal.
+
+La aplicación se ejecuta localmente en la computadora del profesor o de quien la pruebe; no necesita que la computadora del autor esté encendida.
+La base `catalogo.db` se crea al iniciar y queda excluida del control de versiones.
+Para otro puerto, definir la variable `PORT`.
 Este servidor está destinado a demostraciones locales; no ofrece autenticación ni despliegue público.
 
 ## Uso
@@ -41,6 +66,8 @@ Los quince PR y su estado deben verificarse en GitHub; la existencia de este REA
 ```sh
 python3 -m unittest -v test_app.py
 ```
+
+En Windows, desde la misma carpeta, utilizar `py -m unittest -v test_app.py`. El resultado esperado es `Ran 6 tests` y `OK`.
 
 Las pruebas utilizan una base temporal y verifican HTTP, CRUD, validación, búsqueda, persistencia y recursos inexistentes.
 No se requieren datos personales ni credenciales para probar la aplicación.
