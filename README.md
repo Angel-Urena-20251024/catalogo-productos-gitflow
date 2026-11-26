@@ -5,7 +5,7 @@ Permite registrar, consultar, editar, eliminar y buscar productos. Conserva los 
 
 ## Ejecutar
 
-Requiere **Python 3.10 o posterior**. No necesita instalar paquetes externos.
+Requiere **Python 3.10 o posterior**.
 
 ```sh
 python3 app.py
