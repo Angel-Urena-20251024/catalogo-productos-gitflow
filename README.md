@@ -49,6 +49,16 @@ Este servidor está destinado a demostraciones locales; no ofrece autenticación
 5. Pulsar **Eliminar** y confirmar la operación.
 6. Reiniciar el servidor y comprobar la persistencia de los registros restantes.
 
+### Ejemplo para comprobar el CRUD
+
+1. Registrar **Lápiz**, con precio **25.50** y existencias **10**.
+2. Buscar **LÁPIZ**: debe aparecer el producto aunque cambien las mayúsculas. La búsqueda conserva las tildes; `lapiz` y `lápiz` son textos distintos.
+3. Editar el producto, cambiar las existencias a **8** y guardar. La tabla debe mostrar el nuevo valor.
+4. Detener el servidor con **Control + C**, iniciarlo otra vez y comprobar que el producto sigue registrado con **8** existencias.
+5. Eliminarlo y aceptar la confirmación. Al pulsar **Todos**, la tabla debe quedar vacía si no había otros productos.
+
+Si la terminal indica que el puerto 8000 ya está ocupado, comprobar si otra ventana tiene el programa abierto y detener esa instancia antes de iniciarlo de nuevo.
+
 ## Ramas de trabajo
 
 - `feature/listar-productos`: lista y detalle por identificador.
