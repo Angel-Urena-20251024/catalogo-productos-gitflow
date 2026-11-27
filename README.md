@@ -69,7 +69,6 @@ Si la terminal indica que el puerto 8000 ya está ocupado, comprobar si otra ven
 
 La práctica exige tres PR por cada rama: hacia `dev`, `qa` y `main`.
 Es una adaptación académica del modelo Git Flow. Cada función se comprueba antes de integrar su PR en el siguiente destino.
-Los quince PR y su estado deben verificarse en GitHub; la existencia de este README no acredita que ya se hayan realizado.
 
 ## Pruebas
 
