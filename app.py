@@ -16,6 +16,7 @@ ROUTES = {}
 def connection():
     db = sqlite3.connect(DB)
     db.row_factory = sqlite3.Row
+    db.create_function('casefold', 1, str.casefold, deterministic=True)
     return db
 
 def initialize():

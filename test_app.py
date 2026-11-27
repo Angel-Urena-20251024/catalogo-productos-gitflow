@@ -51,6 +51,11 @@ class CatalogTest(unittest.TestCase):
         self.create('Cuaderno'); self.create('Lápiz')
         status,rows=self.request('GET','/api/search?q=CUADER')
         self.assertEqual(status,200); self.assertEqual([r['name'] for r in rows],['Cuaderno'])
+        for query in ['L%C3%81PIZ', 'l%C3%A1piz']:
+            with self.subTest(query=query):
+                status,rows=self.request('GET','/api/search?q='+query)
+                self.assertEqual(status,200)
+                self.assertEqual([r['name'] for r in rows],['Lápiz'])
         self.assertEqual(self.request('GET','/api/search?q=%25')[1],[])
         self.assertEqual(self.request('GET','/api/search?q=%27%20OR%201%3D1--')[1],[])
     def test_missing_and_bad_identifiers(self):
