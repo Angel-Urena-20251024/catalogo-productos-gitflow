@@ -6,7 +6,7 @@ def search(path, query, body):
     if len(text) > 100:
         return 400, {'error': 'La búsqueda no puede superar 100 caracteres.'}
     with connection() as db:
-        rows = db.execute('SELECT * FROM products WHERE instr(lower(name),lower(?))>0 ORDER BY id DESC', (text,)).fetchall()
+        rows = db.execute('SELECT * FROM products WHERE instr(casefold(name),casefold(?))>0 ORDER BY id DESC', (text,)).fetchall()
     return 200, [public(row) for row in rows]
 
 def register(routes):
